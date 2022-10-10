@@ -17,7 +17,7 @@ class Contenedor {
             object.id = ultimoId + 1
             object.timestamp = Date.now()
             contenidojson.push(object)
-            await fs.promises.writeFile(`./${this.name}`, JSON.stringify(contenidojson))
+            await fs.promises.writeFile(`./models/${this.name}`, JSON.stringify(contenidojson))
         } 
         catch(error){
             console.log(error)
@@ -32,7 +32,7 @@ class Contenedor {
             const productIndex = contenidojson.findIndex((product) => product.id === object.id);
             console.log(productIndex)
             contenidojson[productIndex] = object;
-            await fs.promises.writeFile(`./${this.name}`, JSON.stringify(contenidojson))
+            await fs.promises.writeFile(`./models/${this.name}`, JSON.stringify(contenidojson))
         } 
         catch(error){
             console.log(error)
@@ -87,7 +87,7 @@ class Contenedor {
                 contenidojson.splice(contenidojson.findIndex(function(i){
                     return i.id===id
             }),1)
-            await fs.promises.writeFile(`./${this.name}`, JSON.stringify(contenidojson));
+            await fs.promises.writeFile(`./models/${this.name}`, JSON.stringify(contenidojson));
             const productId = id
             return productId
         };
@@ -105,7 +105,7 @@ class Contenedor {
             console.log(contenidojson)
             contenidojson = []
             console.log(contenidojson)
-            await fs.promises.writeFile(`./${this.name}`, JSON.stringify(contenidojson));
+            await fs.promises.writeFile(`./models/${this.name}`, JSON.stringify(contenidojson));
         }
         catch(error){
             console.log(error)
