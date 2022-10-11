@@ -1,4 +1,5 @@
 const express = require('express');
+const authorizer = require('../../../api/middlewares/authorizer')
 
 const {Contenedor} = require('../../../models/classContenedor')
 
@@ -26,12 +27,12 @@ router.get('/:id', (req,res)=>{
 })
 
 
-router.post('/', (req, res) => {
+router.post('/', authorizer, (req, res) => {
     const { title, description, price, image, stock } = req.body;
-    let admin = true
-    if (!admin){
-      return res.status(500).json({ error : -1, descripcion: "acceso no autorizado" });
-    }
+    // let admin = true
+    // if (!admin){
+    //   return res.status(500).json({ error : -1, descripcion: "acceso no autorizado" });
+    // }
     if ( !title || !description || !price || !image || !stock) {
       return res.status(400).json({ succes: false, error: 'Wrong body format' });
     }
@@ -48,12 +49,12 @@ router.post('/', (req, res) => {
   });
 
 
-  router.put('/:productId', (req, res) => {
+  router.put('/:productId',authorizer, (req, res) => {
     const { params: { productId }, body: { title, description, price, image, stock} } = req;
-    let admin = true
-    if (!admin){
-      return res.status(500).json({ error : -1, descripcion: "acceso no autorizado" });
-    }
+    // let admin = true
+    // if (!admin){
+    //   return res.status(500).json({ error : -1, descripcion: "acceso no autorizado" });
+    // }
     if ( !title || !description || !price || !image || !stock) {
       return res.status(400).json({ success: false, error: 'Wrong body format' });
     };
@@ -81,12 +82,12 @@ router.post('/', (req, res) => {
   });
 
 
-router.delete('/:id', (req,res)=>{
+router.delete('/:id',authorizer, (req,res)=>{
     const { id } = req.params;
-    let admin = true
-    if (!admin){
-      return res.status(500).json({ error : -1, descripcion: "acceso no autorizado" });
-    }
+    // let admin = true
+    // if (!admin){
+    //   return res.status(500).json({ error : -1, descripcion: "acceso no autorizado" });
+    // }
     productList.deleteById(+id).then(result =>{
         if (!result) {
             return res.status(404).json({ success: false, error: `Product with id: ${id} does not exist!`});
