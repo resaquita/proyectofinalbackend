@@ -1,25 +1,38 @@
 [
-    {"id": 1,
-"timestamp": 123,
-"products":[{
-    "title": "reloj",
-    "price": 120,
-    "image": "https://cdn3.iconfinder.com/data/icons/education-209/64/clock-stopwatch-timer-time-256.png",
-    "id": 1,
-    "description": "Marca la hora",
-    "code": 123,
-    "stock": 10,
-    "timestamp": 111111
-},
-{
-    "title": "avion de papel",
-    "price": 120,
-    "image": "https://cdn3.iconfinder.com/data/icons/education-209/64/plane-paper-toy-science-school-256.png",
-    "id": 2,
-    "description": "Casi que vuela",
-    "code": 124,
-    "stock": 5,
-    "timestamp": 111112
-}]
-}
+    {
+        "id": 1,
+        "timestamp": 123,
+        "products": [
+            {
+                "title": "reloj",
+                "price": 120,
+                "image": "https://cdn3.iconfinder.com/data/icons/education-209/64/clock-stopwatch-timer-time-256.png",
+                "id": 1,
+                "description": "Marca la hora",
+                "code": 123,
+                "stock": 10,
+                "timestamp": 111111
+            },
+            {
+                "title": "avion de papel",
+                "price": 120,
+                "image": "https://cdn3.iconfinder.com/data/icons/education-209/64/plane-paper-toy-science-school-256.png",
+                "id": 2,
+                "description": "Casi que vuela",
+                "code": 124,
+                "stock": 5,
+                "timestamp": 111112
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "timestamp": 1665474755677,
+        "products": []
+    },
+    {
+        "id": 3,
+        "timestamp": 1665474758331,
+        "products": []
+    }
 ]
